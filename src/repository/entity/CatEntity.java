@@ -1,19 +1,21 @@
 package repository.entity;
 
+import enums.Breed;
+
 import java.time.LocalDate;
 import java.util.Objects;
 import java.util.UUID;
 
 public class CatEntity extends BaseEntity {
 
-    private String breed;
+    private Breed breed;
     private String color;
 
     public CatEntity() {
 
     }
 
-    public CatEntity(UUID id, String name, LocalDate birthDate, String breed, String color) {
+    public CatEntity(UUID id, String name, LocalDate birthDate, Breed breed, String color) {
 
         super(id, name, birthDate);
         this.breed = breed;
@@ -22,10 +24,10 @@ public class CatEntity extends BaseEntity {
 
     public String getBreed() {
 
-        return this.breed;
+        return this.breed.name();
     }
 
-    public void setBreed(String breed) {
+    public void setBreed(Breed breed) {
 
         this.breed = breed;
     }
@@ -54,7 +56,7 @@ public class CatEntity extends BaseEntity {
     @Override
     public int hashCode() {
 
-        return breed.length() + color.length();
+        return breed.name().length() + color.length();
     }
 
     @Override
