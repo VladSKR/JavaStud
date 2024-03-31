@@ -56,7 +56,14 @@ public class CatEntity extends BaseEntity {
     @Override
     public int hashCode() {
 
-        return breed.name().length() + color.length();
+        try {
+
+            return breed.name().length() + color.length();
+        }
+        catch (NullPointerException e) {
+
+            return 0;
+        }
     }
 
     @Override
