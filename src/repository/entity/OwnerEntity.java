@@ -53,12 +53,20 @@ public class OwnerEntity extends BaseEntity {
                 + ", birthdate = " + super.getBirthDate() + ")";
     }
 
-    @Override
-    public int hashCode() {
 
-        return this.getName().length()
-                + this.getBirthDate().lengthOfMonth()
-                + this.getId().hashCode();
+    @Override
+    public int hashCode(){
+
+        try {
+
+            return this.getName().length()
+                    + this.getBirthDate().lengthOfMonth()
+                    + this.getId().hashCode();
+        }
+        catch (NullPointerException e) {
+            return 0;
+        }
+
     }
 
     @Override
