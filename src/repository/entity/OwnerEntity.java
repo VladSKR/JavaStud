@@ -55,7 +55,7 @@ public class OwnerEntity extends BaseEntity {
 
 
     @Override
-    public int hashCode(){
+    public int hashCode() {
 
         try {
 
