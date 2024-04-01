@@ -56,9 +56,15 @@ public class OwnerEntity extends BaseEntity {
     @Override
     public int hashCode() {
 
-        return this.getName().length()
-                + this.getBirthDate().lengthOfMonth()
-                + this.getId().hashCode();
+        try {
+            return this.getName().length()
+                    + this.getBirthDate().lengthOfMonth()
+                    + this.getId().hashCode();
+        }
+        catch (NullPointerException e) {
+            return 0;
+        }
+
     }
 
     @Override
