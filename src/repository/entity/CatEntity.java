@@ -1,5 +1,7 @@
 package repository.entity;
 
+import enums.Color;
+
 import enums.Breed;
 
 import java.time.LocalDate;
@@ -9,22 +11,22 @@ import java.util.UUID;
 public class CatEntity extends BaseEntity {
 
     private Breed breed;
-    private String color;
+    private Color color;
 
     public CatEntity() {
 
     }
 
-    public CatEntity(UUID id, String name, LocalDate birthDate, Breed breed, String color) {
+    public CatEntity(UUID id, String name, LocalDate birthDate, Breed breed, Color color) {
 
         super(id, name, birthDate);
         this.breed = breed;
         this.color = color;
     }
 
-    public String getBreed() {
+    public Breed getBreed() {
 
-        return this.breed.name();
+        return this.breed;
     }
 
     public void setBreed(Breed breed) {
@@ -32,12 +34,12 @@ public class CatEntity extends BaseEntity {
         this.breed = breed;
     }
 
-    public String getColor() {
+    public Color getColor() {
 
         return this.color;
     }
 
-    public void setColor(String color) {
+    public void setColor(Color color) {
 
         this.color = color;
     }
@@ -55,8 +57,8 @@ public class CatEntity extends BaseEntity {
 
     @Override
     public int hashCode() {
-
-        return breed.name().length() + color.length();
+        
+        return breed.name().length() + color.name().length();
     }
 
     @Override
