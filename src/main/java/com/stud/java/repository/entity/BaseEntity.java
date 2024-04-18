@@ -1,4 +1,4 @@
-package repository.entity;
+package com.stud.java.repository.entity;
 
 import java.time.LocalDate;
 import java.util.UUID;
