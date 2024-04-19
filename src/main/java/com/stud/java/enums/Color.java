@@ -1,4 +1,4 @@
-package enums;
+package com.stud.java.enums;
 
 public enum Color {
 

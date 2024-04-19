@@ -1,6 +1,6 @@
-package dao;
+package com.stud.java.dao;
 
-import repository.entity.CatEntity;
+import com.stud.java.repository.entity.CatEntity;
 
 import java.util.UUID;
 

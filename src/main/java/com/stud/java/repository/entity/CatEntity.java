@@ -1,8 +1,7 @@
-package repository.entity;
+package com.stud.java.repository.entity;
 
-import enums.Color;
-
-import enums.Breed;
+import com.stud.java.enums.Breed;
+import com.stud.java.enums.Color;
 
 import java.time.LocalDate;
 import java.util.Objects;
@@ -57,8 +56,14 @@ public class CatEntity extends BaseEntity {
 
     @Override
     public int hashCode() {
-        
-        return breed.name().length() + color.name().length();
+
+        try {
+            return this.getName().length()
+                    + this.getBirthDate().lengthOfMonth()
+                    + this.getId().hashCode();
+        } catch (NullPointerException e) {
+            return 0;
+        }
     }
 
     @Override

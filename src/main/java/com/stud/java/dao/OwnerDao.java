@@ -1,6 +1,6 @@
-package dao;
+package com.stud.java.dao;
 
-import repository.entity.OwnerEntity;
+import com.stud.java.repository.entity.OwnerEntity;
 
 import java.util.UUID;
 
