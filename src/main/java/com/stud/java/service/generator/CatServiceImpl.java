@@ -21,6 +21,11 @@ public class CatServiceImpl implements CatService {
                 count = 0;
             }
             breedCount.put(breed, count + 1);
+            if (breedCount.containsKey(breed)) {
+                breedCount.put(breed, breedCount.get(breed) + 1);
+            } else {
+                breedCount.put(breed, 1);
+            }
         }
 
         return breedCount;
