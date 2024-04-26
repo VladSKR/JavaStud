@@ -4,8 +4,10 @@ import com.stud.java.enums.Breed;
 import com.stud.java.repository.entity.CatEntity;
 import com.stud.java.repository.entity.CatEntityGenerator;
 import com.stud.java.enums.Breed;
+import com.stud.java.enums.Color;
 import com.stud.java.repository.entity.CatEntity;
 import com.stud.java.repository.entity.CatEntityGenerator;
+import com.stud.java.repository.entity.ChangeColor;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -30,6 +32,7 @@ public class JavaStudApplication {
         }
 
         List<CatEntity> cats = CatEntityGenerator.generateCats(100);
+        ChangeColor.changeColor(cats, Color.BLACK);
         Map<Breed, Integer> breedCount = CatEntity.countCatsByBreed(cats);
         System.out.println(breedCount);
 
