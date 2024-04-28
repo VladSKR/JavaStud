@@ -4,8 +4,7 @@ import com.stud.java.enums.Breed;
 import com.stud.java.enums.Color;
 
 import java.time.LocalDate;
-import java.util.Objects;
-import java.util.UUID;
+import java.util.*;
 
 public class CatEntity extends BaseEntity {
 
@@ -41,6 +40,22 @@ public class CatEntity extends BaseEntity {
     public void setColor(Color color) {
 
         this.color = color;
+    }
+
+    public Map<Breed, Integer> AmountOfCatsByBreed(List<CatEntity> catEntities) {
+
+        Map<Breed, Integer> result = new HashMap<>();
+
+        for (CatEntity cat : catEntities) {
+            breed = cat.getBreed();
+            if (result.containsKey(breed)) {
+                result.put(breed, result.get(breed) + 1);
+            } else {
+                result.put(breed, 1);
+            }
+        }
+
+        return result;
     }
 
     @Override
