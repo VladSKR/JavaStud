@@ -4,7 +4,8 @@ import com.stud.java.enums.Breed;
 import com.stud.java.enums.Color;
 
 import java.time.LocalDate;
-import java.util.*;
+import java.util.Objects;
+import java.util.UUID;
 
 public class CatEntity extends BaseEntity {
 
