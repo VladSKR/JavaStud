@@ -42,22 +42,6 @@ public class CatEntity extends BaseEntity {
         this.color = color;
     }
 
-    public Map<Breed, Integer> AmountOfCatsByBreed(List<CatEntity> catEntities) {
-
-        Map<Breed, Integer> result = new HashMap<>();
-
-        for (CatEntity cat : catEntities) {
-            breed = cat.getBreed();
-            if (result.containsKey(breed)) {
-                result.put(breed, result.get(breed) + 1);
-            } else {
-                result.put(breed, 1);
-            }
-        }
-
-        return result;
-    }
-
     @Override
     public String toString() {
 
